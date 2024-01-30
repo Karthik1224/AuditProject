@@ -56,7 +56,7 @@ public class CustomerDetailsController {
 	}
 
 	@GetMapping("/customer/fetchByNumber")
-	@Operation(summary = "find customer by mobile number", description = "Returns customer details based on number")
+	@Operation(summary = "find customer by mobile number", description = "Returns customer details based on mobile number")
 	public ResponseEntity<?> fetchCustomerByNumber(@RequestParam String mobileNumber) {
 		return new ResponseEntity( customerDetailsService.fetchCustomerByMobileNumber(mobileNumber),HttpStatus.OK);
 	}
