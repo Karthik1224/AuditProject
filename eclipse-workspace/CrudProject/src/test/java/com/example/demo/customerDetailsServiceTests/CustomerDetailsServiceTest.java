@@ -6,6 +6,7 @@ import static org.mockito.Mockito.doThrow;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -52,7 +53,7 @@ public class CustomerDetailsServiceTest {
 
 	@Test
 	public void updateCustomerDetails() {
-		Optional<CustomerDetails> optional = customerDetailsDao.findById(null);
+		Optional<CustomerDetails> optional = customerDetailsDao.findById(UUID.randomUUID());
 		CustomerDetailsModifyReqDto modifyDto = new CustomerDetailsModifyReqDto();
 		Mockito.when(customerDetailsDao.findById(Mockito.any())).thenReturn(optional);
 		Response res = customerDetailsService.modifyCustomerDetails(modifyDto);
@@ -62,7 +63,7 @@ public class CustomerDetailsServiceTest {
 	@Test
 	public void deleteById() {
 		doThrow(new PersistenceException("Exception occured")).when(customerDetailsDao).findById(Mockito.any());
-		Response res = customerDetailsService.deleteCustomerByUUID(null);
+		Response res = customerDetailsService.deleteCustomerByUUID(UUID.randomUUID());
 		assertEquals(Constant.SUCCESS_API_CODE, res.getStatus());
 	}
 
