@@ -10,5 +10,5 @@ import com.example.demo.modal.User;
 @Repository
 public interface UserRepo extends JpaRepository<User,Integer> {
 
-	public User findByEmail(String email);
+	Optional<User>findByEmail(String email);
 }

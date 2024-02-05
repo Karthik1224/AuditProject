@@ -5,16 +5,22 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 @Entity
 @Table(name = "user_table")
-@ToString
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements UserDetails {
 	
 	@Id
@@ -56,7 +62,7 @@ public class User implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return this.email;
+		return email;
 	}
 	@Override
 	public boolean isAccountNonExpired() {

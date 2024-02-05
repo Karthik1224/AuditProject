@@ -1,14 +1,9 @@
-package com.example.demo.modal;
+package com.example.demo.responseDto;
 
 public class JwtResponse {
 
 	private String jwtToken;
-	private String username;
-	public JwtResponse(String jwtToken, String username) {
-		super();
-		this.jwtToken = jwtToken;
-		this.username = username;
-	}
+	private String email;
 	public String getJwtToken() {
 		return jwtToken;
 	}
@@ -16,10 +11,10 @@ public class JwtResponse {
 		this.jwtToken = jwtToken;
 	}
 	public String getUsername() {
-		return username;
+		return email;
 	}
 	public void setUsername(String username) {
-		this.username = username;
+		this.email = username;
 	}
 	
 }

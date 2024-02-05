@@ -6,22 +6,18 @@ import java.util.UUID;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.example.demo.enums.Gender;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "CustomerDetails")
 public class CustomerDetails {
-
-	
 
 	@Id
 	@Column(name = "id")
@@ -44,11 +40,9 @@ public class CustomerDetails {
 	@Column(name = "AadharNumber", columnDefinition = "VARCHAR(12)", nullable = false)
 	private String aadharNumber;
 
-	@Column(name = "Gender" ,columnDefinition = "VARCHAR(10)", nullable = false)
+	@Column(name = "Gender", columnDefinition = "VARCHAR(10)", nullable = false)
 	@Enumerated(value = EnumType.STRING)
 	private Gender gender;
-
-	
 
 	public UUID getId() {
 		return id;

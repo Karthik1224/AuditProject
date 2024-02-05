@@ -1,10 +1,10 @@
-package com.example.demo.modal;
+package com.example.demo.requestDto;
 
-public class JwtRequest {
+public class SignInRequest {
 
 	private String email;
 	private String password;
-	public JwtRequest(String email, String password) {
+	public SignInRequest(String email, String password) {
 		super();
 		this.email = email;
 		this.password = password;

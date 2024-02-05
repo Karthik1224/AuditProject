@@ -7,8 +7,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.constants.Constant;
@@ -43,13 +41,10 @@ public class CustomerDetailsService {
 	}
 
 	public Response fetchAllCustomerDetails() {
-
 		try {
 			List<CustomerDetails> listOfCustomers = customerDetailsDao.findAll();
-
 			return new Response(Constant.SUCCESS_API_CODE, Constant.SUCCESS_FETCH_CUSTOMER, listOfCustomers);
 		} catch (Exception e) {
-
 			return new Response(Constant.FAILURE_API_CODE, Constant.FAILURE_FETCH_CUSTOMER, new ArrayList<>());
 		}
 	}
